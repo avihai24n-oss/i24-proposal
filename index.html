@@ -432,6 +432,10 @@
   #stage[dir="ltr"] #a-fwd{ right:.65em; left:auto; }
   #stage[dir="ltr"] #a-back{ left:.65em; right:auto; }
   #stage[dir="ltr"] .arrow svg{ transform:scaleX(-1); }
+  /* the pipeline is drawn for a right to left read, so mirror the chevrons
+     and the fan when the deck flips, or they point against the flow */
+  #stage[dir="ltr"] .farrow svg,
+  #stage[dir="ltr"] .fan svg{ transform:scaleX(-1); }
 
   /* the outer thirds are click targets for the presenter */
   .zone{
