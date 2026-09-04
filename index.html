@@ -182,6 +182,43 @@
   .cell img.tall{ transform:scale(1.5); }
 
   /* =====================================================
+     02  who we are: four highlights, one shape, equal weight
+     ===================================================== */
+  #s15 h1{ font-size:2.6em; color:var(--navy); }
+  #s15 .body{ gap:1em; }
+
+  .hl{
+    flex:1; min-height:0;
+    display:grid; grid-template-columns:repeat(4,1fr);
+    border-top:2px solid var(--navy); border-bottom:1px solid var(--rule-lt);
+  }
+  .hl-c{
+    padding:1.5em 1.5em 1.4em; border-inline-start:1px solid var(--rule-lt);
+    display:flex; flex-direction:column; justify-content:center; gap:.6em; min-width:0;
+  }
+  .hl-c:first-child{ border-inline-start:0; padding-inline-start:0; }
+  .hl-i{ color:var(--red); height:1.75em; }
+  .hl-i svg{ height:100%; width:auto; }
+  .hl-k{
+    font-family:var(--display); font-weight:800; font-size:.76em;
+    letter-spacing:.18em; color:var(--red);
+  }
+  .hl-n{
+    font-family:var(--display); font-weight:900; font-size:2.6em;
+    line-height:1.02; letter-spacing:-.03em; color:var(--navy);
+  }
+  .hl-n.words{ font-size:1.85em; line-height:1.15; }
+  .hl-d{ font-size:.98em; line-height:1.5; color:var(--steel-dk); }
+  .hl-d b{ color:var(--navy); font-weight:700; }
+  /* the logo slot sits where the other cards carry their closing line */
+  .hl-logos{
+    margin-top:.5em; padding-top:1em; border-top:1px solid var(--rule-lt);
+    display:flex; align-items:center; gap:1.6em;
+  }
+  .hl-logos img{ height:2.1em; width:auto; max-width:45%; object-fit:contain; }
+  .hl-logos img.pad{ transform:scale(2.27); transform-origin:center; }
+
+  /* =====================================================
      02  the studio's numbers, with the source chart kept
          small until someone asks to see it
      ===================================================== */
@@ -447,7 +484,7 @@
           </div>
         </div>
         <div class="ticker">
-          <div class="num ltr">01 / 03</div>
+          <div class="num ltr">01 / 04</div>
           <div class="strap">
             <b>TodoAI STUDIO</b><span class="sep"></span>
             <span class="t">מנועי וידאו אוטומטיים</span><span class="sep"></span>
@@ -455,6 +492,68 @@
           </div>
           <div class="flag"><i></i> AutoVids</div>
         </div>
+      </div>
+    </section>
+
+    <!-- ======================= 02  who we are ======================= -->
+    <section class="slide light" id="s15">
+      <header class="masthead">
+        <div class="mh-side">
+          <span class="mh-i24"><svg fill="#ffffff"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1796 910" aria-hidden="true"><path d="M464 904l-50-86h-42l-32 165h45l17-90 52 90h39l32-165h-45zM535 983h131l8-41h-87l5-26h78l7-36h-78l4-22h86l8-40h-131zM926 818l-47 94-13-94h-39l-49 94-10-94h-48l23 165h39l51-94 14 94h39l86-165h-46zM1026 864q1-5 5.5-8t12.5-3q11 0 22 4t21 12l29-32q-12-10-27-15.5t-36-5.5q-29 0-49 14.5t-24 37.5v0q-5 25 10.5 35t40.5 16q16 4 21 7.5t4 8.5h-1q-1 6-6 9t-14 3q-14 0-26.5-5t-22.5-15l-31 30q12 13 30.5 20t40.5 7q29 0 50-14t26-39v0q4-23-10-34t-41-17q-16-4-21-7t-4-9v0 0zM1283 574l286-313-61 313h-225zM1796 574h-112l111-573h-225l-521 573h-485q13-47 50.5-79t94.5-32h228q47 0 88.5-18.5t72.5-50 49.5-73.5 18.5-89q0-48-18.5-90t-49.5-73-72.5-49.5-88.5-18.5h-442l-34 173h476q22 0 38.5 17.5t16.5 40.5-16.5 40.5-38.5 17.5h-228q-60 0-113.5 20t-96.5 57-72.5 88.5-42.5 113.5l-25 135q-14 15-64.5 63t-74.5 40q-11-4-11.5-17.5t-0.5-20.5l102-524h-191l-15 75.5t-32.5 166-32.5 167-15 78.5q-14 69-22 129t8 93q25 52 75.5 35.5t104.5-62 101.5-100.5 66.5-80h1116l-33 173h116q26 0 46-16.5t25-42.5l23-114h111l34-173zM358 1h-73q-52 0-92 33t-49 84l-11 56h191z"></path></svg></span>
+        </div>
+      </header>
+
+      <div class="body">
+        <div class="eyebrow"><span class="n">02</span><span class="bar"></span><span class="t">מי אנחנו</span></div>
+        <div class="head">
+          <h1>סטודיו קטן, <em>טווח של ערוץ</em>.</h1>
+          <p class="lede">בנינו את הקהל שלנו באותן מערכות שאנחנו בונים ללקוחות, ואנחנו מפעילים אותן כל יום.</p>
+        </div>
+
+        <div class="hl">
+          <div class="hl-c">
+            <span class="hl-i"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.4"/><path d="M2.5 20c0-3.4 2.9-5.3 6.5-5.3s6.5 1.9 6.5 5.3"/><path d="M16.2 5.2a3.4 3.4 0 0 1 0 5.9M17.5 14.9c2.6.5 4 2.3 4 5.1"/></svg></span>
+            <span class="hl-k">קהל</span>
+            <span class="hl-n"><span class="ltr">30,000+</span></span>
+            <span class="hl-d">עוקבים באינסטגרם, ומעל <b>50,000</b> בכל הרשתות יחד.</span>
+          </div>
+
+          <div class="hl-c">
+            <span class="hl-i"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3.2 9.5h17.6M3.2 14.5h17.6M12 3a15 15 0 0 1 0 18A15 15 0 0 1 12 3Z"/></svg></span>
+            <span class="hl-k">טווח</span>
+            <span class="hl-n"><span class="ltr">100M+</span></span>
+            <span class="hl-d">צפיות ברשתות בשנה האחרונה. מגיעים לקהלים מגוונים, <b>בארץ ומחוצה לה</b>.</span>
+          </div>
+
+          <div class="hl-c">
+            <span class="hl-i"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V6.5L12 3l7 3.5V21"/><path d="M9.4 21v-4.6h5.2V21"/><path d="M9.4 9.4h1.6M13 9.4h1.6M9.4 12.8h1.6M13 12.8h1.6"/></svg></span>
+            <span class="hl-k">לקוחות</span>
+            <span class="hl-n words">עובדים עם<br>גופים גדולים</span>
+            <span class="hl-d">מותגי מדיה מובילים בשוק הישראלי.</span>
+            <span class="hl-logos">
+              <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iMjkiIHZpZXdCb3g9IjAgMCA4MCAyOSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgY2xpcC1wYXRoPSJ1cmwoI2NsaXAwXzg3NF8xNTQyMCkiPgo8cGF0aCBkPSJNMzkuNTc2OCA3LjExNTVDMzguODIxMSA3LjU4NjA2IDM4LjIzNzggOC4xMzE1MiAzNy43ODk5IDguNzIyOEgzNi43NjkzQzM3LjM0MTIgNy41OTc1MSAzOC4yMzQyIDYuNTUxNTMgMzkuNTkxOCA1LjcwOTExQzQyLjYyODkgMy44MjY4OCA0OC4wMDI4IDEgNTEuOTg2NiAxQzUyLjg2MDIgMSA1My42Njg4IDEuMTM2NTkgNTQuMzY5MSAxLjQ0ODUzQzU2LjQxMiAyLjM1NzA0IDU4LjYxMDcgNS4yODM0OSA2MC4xODczIDguNzIzNjhINTYuNDA1OUM1NS4xMzI4IDYuMjM4NzEgNTMuNTAxNiA0LjIwODQzIDUxLjk3NDMgMy41MjU1MUM1MS4zODY1IDMuMjYyOTEgNTAuNzA5MSAzLjE0ODM2IDQ5Ljk3NTMgMy4xNDgzNkM0Ni42MzI5IDMuMTQ4MzYgNDIuMTIzOSA1LjUyOTM1IDM5LjU3NTkgNy4xMTYzOEwzOS41NzY4IDcuMTE1NVoiIGZpbGw9InVybCgjcGFpbnQwX2xpbmVhcl84NzRfMTU0MjApIi8+CjxwYXRoIGQ9Ik02MC4xMDI4IDIzLjIwNzlDNTcuOTYwNSAyNS40MDQ3IDU0LjYyODYgMjYuOTM4IDUzLjMxMjQgMjcuNDY4NUM1MS42NTA1IDI4LjEzNzMgNDUuNDgwMyAyOS45MzMyIDQyLjA0MzggMjguMzkzOEM0MC4xNjk4IDI3LjU1NCAzOC44NjUgMjUuNDQwOSAzNy45NjMyIDIzLjIwNzlIMzguODEzMUMzOS41MTYxIDI0LjU0MzggNDAuNDI5MyAyNS42ODY3IDQxLjYxNDQgMjYuMjE5QzQ0LjQ5NzYgMjcuNTE2MSA0OS42NzUzIDI2LjAwMjIgNTEuMDY4OSAyNS40MzkxQzUxLjg3NzQgMjUuMTEyMiA1My41OTU3IDI0LjMzMDYgNTUuMTYzNSAyMy4yMDdINjAuMTAzN0w2MC4xMDI4IDIzLjIwNzlaIiBmaWxsPSJ1cmwoI3BhaW50MV9saW5lYXJfODc0XzE1NDIwKSIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTYxLjk4NDcgMTAuNTY4QzU4LjkxMjQgMTAuNTY4IDU1LjU1ODYgMTEuNDg4OSA1NS41NTg2IDE1LjgzNEM1NS41NTg2IDIwLjE3OTIgNTguNzY5IDIxLjM2IDYxLjk4NDcgMjEuMzI1N0M2My45NjM0IDIxLjMyNTcgNjguMDAwOSAyMC4zOTE2IDY4LjAwMDkgMTUuODM0QzY4LjAwMDkgMTEuNjQ4NCA2NS4wNjIzIDEwLjU2OCA2MS45ODQ3IDEwLjU2OFpNNjEuODE0OSAxOC4zNjMxQzYxLjAwOTkgMTguMzYzMSA2MC43NzI0IDE3LjE2MzggNjAuNzcyNCAxNS44Mjk2QzYwLjc3MjQgMTQuNDk1NSA2MC45MTY2IDEzLjUyMTggNjEuNzkwMyAxMy41NDM4QzYyLjY0NDYgMTMuNDcyNCA2Mi44Nzk1IDE0LjQyMjQgNjIuODc5NSAxNS44Mjk2QzYyLjg3OTUgMTcuNDA0MyA2Mi41NTEzIDE4LjM2MzEgNjEuODE0OSAxOC4zNjMxWiIgZmlsbD0iIzE2MUMyOCIvPgo8cGF0aCBkPSJNMzcuNDY3IDE5LjY1NDlDMzcuNDQ5NCAxOS42NzYxIDM3LjQyODMgMTkuNjk1NCAzNy40MTQyIDE5LjcxNzVDMzYuODQ3NiAyMC42MjI1IDM2LjAyMjQgMjEuMTE3NyAzNS4wMTE1IDIxLjI4ODdDMzQuMDkwMyAyMS40NDQ2IDMzLjE4MzIgMjEuMzY0NCAzMi4zMTY2IDIwLjk5MjZDMzEuNDExMyAyMC42MDU3IDMwLjc4MTQgMTkuOTQ1NyAzMC42MzQ0IDE4LjkyMThDMzAuMzkyNSAxNy4yMzY5IDMwLjk2NzkgMTUuNzE2OCAzMi43OTI2IDE1LjAxNzJDMzMuODgyNyAxNC41OTk1IDM1LjAxODUgMTQuNTI1NSAzNi4xNjU4IDE0LjU3ODNDMzYuNjI2OCAxNC41OTk1IDM3LjA4NjEgMTQuNjQ5NyAzNy41NjIxIDE0LjY4NzZDMzcuNTY0NyAxNC4yNjczIDM3LjQyNzQgMTMuOTI0NSAzNy4xMDQ2IDEzLjY3NkMzNi43NjkzIDEzLjQxNjkgMzYuMzc0MyAxMy4zMjc5IDM1Ljk2OTYgMTMuMjc1OUMzNC41NTEzIDEzLjA5NTMgMzMuMjEwNSAxMy4zODQzIDMxLjkyNDIgMTMuOTkxNUMzMS44NjQ0IDE0LjAxOTcgMzEuODAzNyAxNC4wNDcgMzEuNzMwNyAxNC4wODA1QzMxLjcyNzEgMTQuMDIyMyAzMS43MjI3IDEzLjk4NDQgMzEuNzIyNyAxMy45NDY1QzMxLjcyMjcgMTMuMDgxMiAzMS43MjQ1IDEyLjIxNjcgMzEuNzIwMSAxMS4zNTE0QzMxLjcyMDEgMTEuMjQ4MyAzMS43NDkxIDExLjIwNzggMzEuODQ1OSAxMS4xNzc4QzMzLjE3MjcgMTAuNzYyOCAzNC41MjkzIDEwLjYwNDEgMzUuOTExNSAxMC42MjI3QzM2LjkxMDEgMTAuNjM2OCAzNy45MDUyIDEwLjY5MTQgMzguODc3NCAxMC45NTA1QzM5LjQ1ODkgMTEuMTA1NiA0MC4wMTMyIDExLjMzMDMgNDAuNTA5NCAxMS42ODg5QzQxLjM3NjkgMTIuMzE0NiA0MS44MDg5IDEzLjE5ODQgNDEuOTIzMyAxNC4yNjI5QzQxLjk0ODggMTQuNDk5IDQxLjk1NjcgMTQuNzM5NiA0MS45NTc2IDE0Ljk3NzVDNDEuOTYwMiAxNi45NTY3IDQxLjk1OTQgMTguOTM1IDQxLjk1OTQgMjAuOTE0MVYyMS4wOTkySDM3LjUwMTRWMTkuNjY0NkMzNy40OTA4IDE5LjY2MTEgMzcuNDgwMiAxOS42NTY3IDM3LjQ2OTcgMTkuNjUzMUgzNy40Njc5TDM3LjQ2NyAxOS42NTQ5Wk0zNy41NjQ3IDE2LjYzMjRDMzcuMTg0NiAxNi42MzI0IDM2LjgxNzcgMTYuNjA2OSAzNi40NTYxIDE2LjY0MDNDMzYuMTUzNSAxNi42Njg1IDM1Ljg0MjkgMTYuNzMwMiAzNS41NjA1IDE2Ljg0M0MzNS4wMDE4IDE3LjA2NzcgMzQuNzc5MiAxNy43NzYyIDM1LjA3ODMgMTguMzE1NUMzNS4xNDQzIDE4LjQzNDUgMzUuMjU1MiAxOC41NDQ2IDM1LjM3MDQgMTguNjEyNUMzNS44NzYzIDE4LjkwNjggMzYuNjY5OSAxOC43NzI4IDM3LjA2NTggMTguMzM0OUMzNy41MDE0IDE3Ljg1MzcgMzcuNjAxNiAxNy4yNjYgMzcuNTYyOSAxNi42MzMzTDM3LjU2NDcgMTYuNjMyNFoiIGZpbGw9IiMxNjFDMjgiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0yNi4xMzA3IDEwLjU5MjdDMjQuMTY5NiAxMC41OTI3IDIzLjEyNyAxMS43NjEyIDIzLjEyNyAxMi40NTAzQzIzLjEyNyAxMS43MTE4IDIyLjExNTIgMTAuNTkyNyAxOS45MTEzIDEwLjU5MjdDMTcuMzMzNCAxMC41OTI3IDE2LjcxMjMgMTIuMzM3NSAxNi41OTQ0IDEyLjY5VjEwLjgwODZIMTJWMjEuMDg2SDE2Ljg1NDhWMTUuNTM4QzE2Ljg1NDggMTQuNzA5NyAxNi43ODM1IDEzLjc4OTcgMTcuNjk0MSAxMy43ODk3QzE4LjY1MTQgMTMuNzg5NyAxOC41MzM1IDE0LjY3NzEgMTguNTMzNSAxNS41MzhWMjEuMDg2SDIzLjMzNzNWMTUuNTM4QzIzLjMzNzMgMTQuNTk2OSAyMy4zNjQ1IDEzLjc4OTcgMjQuMTYxNiAxMy43ODk3QzI1LjEzOTEgMTMuNzg5NyAyNC45ODYgMTQuODczNiAyNC45ODYgMTUuNTM4VjIxLjA4NkgyOS43NTJWMTUuNDA5M0MyOS43NTIgMTMuNDgxMyAzMC4zMjAzIDEwLjU5MzYgMjYuMTMwNyAxMC41OTM2IiBmaWxsPSIjMTYxQzI4Ii8+CjxwYXRoIGQ9Ik01Ni4xNDE5IDEwLjc3MzRINTAuNjM1Mkw0Ny45MTY1IDE0Ljk4OVY1Ljc5NjM2TDQzLjE1MTUgOC4yMjQ5M1YyMS4wODUxSDQ3LjkxNjVWMTYuODY5NUw1MC42MzUyIDIxLjA4NTFINTYuMTQxOUw1Mi44MTcxIDE1LjkyOTJMNTYuMTQxOSAxMC43NzM0WiIgZmlsbD0iIzE2MUMyOCIvPgo8L2c+CjxkZWZzPgo8bGluZWFyR3JhZGllbnQgaWQ9InBhaW50MF9saW5lYXJfODc0XzE1NDIwIiB4MT0iMzYuNzY5MyIgeTE9IjQuODYyMjgiIHgyPSI1OC40MzAzIiB5Mj0iNC44NjIyOCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgo8c3RvcCBvZmZzZXQ9IjAuMDkiIHN0b3AtY29sb3I9IiNFOTBGMDEiLz4KPHN0b3Agb2Zmc2V0PSIwLjUxIiBzdG9wLWNvbG9yPSIjRjg4NzA1Ii8+CjxzdG9wIG9mZnNldD0iMC45NSIgc3RvcC1jb2xvcj0iI0ZGRTkwMSIvPgo8L2xpbmVhckdyYWRpZW50Pgo8bGluZWFyR3JhZGllbnQgaWQ9InBhaW50MV9saW5lYXJfODc0XzE1NDIwIiB4MT0iMzguMDQyNCIgeTE9IjI2LjEwNDQiIHgyPSI2MC4wNzgyIiB5Mj0iMjYuMTA0NCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgo8c3RvcCBzdG9wLWNvbG9yPSIjNkEzMkJCIi8+CjxzdG9wIG9mZnNldD0iMC4xNSIgc3RvcC1jb2xvcj0iIzUzMzVERCIvPgo8c3RvcCBvZmZzZXQ9IjAuNTQiIHN0b3AtY29sb3I9IiMwMENBRUQiLz4KPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjM0JFMjRBIi8+CjwvbGluZWFyR3JhZGllbnQ+CjxjbGlwUGF0aCBpZD0iY2xpcDBfODc0XzE1NDIwIj4KPHJlY3Qgd2lkdGg9IjU2IiBoZWlnaHQ9IjI4IiBmaWxsPSJ3aGl0ZSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTIgMSkiLz4KPC9jbGlwUGF0aD4KPC9kZWZzPgo8L3N2Zz4K" alt="mako">
+              <img class="pad" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDciIGhlaWdodD0iMjgiIHZpZXdCb3g9IjAgMCA0NyAyOCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xNy45MDQ3IDIwLjAwMDFIMTcuODYzMkMxNy4zMTg0IDIwLjAwMDEgMTYuODE4OSAxOS43MDA0IDE2LjU2NjYgMTkuMjIyTDEyLjMwMzQgMTEuMTU3VjIwLjAwMDFIMTBWOC4wMDAwNkgxMi4zNDQ5QzEyLjg4OTIgOC4wMDAwNiAxMy4zODkyIDguMjk5MTggMTMuNjQxNSA4Ljc3NzAzTDE3LjkwNDcgMTYuODQyVjguMDAwMDZIMjAuMjA3NlYyMC4wMDAxSDE3LjkwNDdaTTI1LjUwMzYgOC4wMDAwNkgyMy41MTY2TDIyLjg1OTQgOS4yNjM1OUgyNS4yMjUzVjE4Ljg3NDlIMjQuMzc5NVYxMC4wODM2SDIyLjQzMjRMMjEuODUzMiAxMS4xOTg0SDIzLjE0MVYyMC4wMDAxSDI2LjQ2MjhWOC45MTk3OEMyNi40NjE2IDguNjc0NTkgMjYuMzU5OSA4LjQ0MDMgMjYuMTgwMSA4LjI2NzU4QzI2LjAwMDMgOC4wOTQ4NiAyNS43NTY5IDcuOTk4OTcgMjUuNTAzNiA4LjAwMDA2Wk0zNi40ODMzIDE4Ljg4NjlIMjkuMzQ0N0wzMy4xMjczIDEzLjI0MjdDMzMuMTMwMSAxMy4yMzg5IDMzLjEzMTcgMTMuMjM3MyAzMy4xMzM5IDEzLjIzNDVDMzMuMzM0MiAxMi45NjcgMzMuNDc0MSAxMi42NTg2IDMzLjU0MjcgMTIuMzMxMUwzMy41NDU1IDEyLjMxNjRDMzMuNTY2NSAxMi4yMDA5IDMzLjU3NyAxMi4wODMyIDMzLjU3NyAxMS45NjU1QzMzLjU3OTIgMTEuNDI1NiAzMy4zNjI0IDEwLjkwOCAzMi45NzY4IDEwLjUzMjZDMzIuMTY4NyA5Ljc1MDY5IDMwLjg5MTQgOS43NTA2OSAzMC4wODMyIDEwLjUzMjZDMjkuNjk3NyAxMC45MDggMjkuNDgwOCAxMS40MjU2IDI5LjQ4MyAxMS45NjU1SDMwLjcxNkMzMC43MTQ0IDExLjYyMDEgMzAuOTMwNyAxMS4zMTEyIDMxLjI1NDMgMTEuMTk2MkMzMS41Nzg0IDExLjA4MTIgMzEuOTM5MSAxMS4xODU5IDMyLjE1MjYgMTEuNDU2NkMzMi4zNjYxIDExLjcyNzQgMzIuMzg2IDEyLjEwNDUgMzIuMjAxOCAxMi4zOTZDMzIuMTk4IDEyLjQwMjUgMjcuMTIxNiAyMC4wMDAxIDI3LjEyMTYgMjAuMDAwMUgzNi45OTk0TDM2LjQ4MzMgMTguODg2OVpNMjcuNDUwNyAxMi4wMTRIMjguNjg2NUMyOC42ODQzIDExLjI3MTkgMjguOTc5MSAxMC41NjA0IDI5LjUwNTIgMTAuMDM5NUMzMC41OTkzIDguOTUxMzggMzIuMzYxNyA4Ljk1MTM4IDMzLjQ1NjQgMTAuMDM5NUMzNC4zOTA3IDEwLjk2NjggMzQuNTQzNCAxMi40Mjc2IDMzLjgyMTUgMTMuNTI5M0wzMC44MjQ1IDE4LjA1MzhIMzYuMDExNUwzNS40NzI3IDE2Ljg5NDRIMzMuMDE2N0MzMy4wMTY3IDE2Ljg5NDQgMzQuMzMxNSAxNS4wMDI2IDM0Ljc5MDcgMTQuMjM3NkMzNS4yNDk4IDEzLjQ3MzIgMzUuNDUzOSAxMi43NzU4IDM1LjQ3MDUgMTIuMDA4NkMzNS40NzMzIDExLjc0MjcgMzUuNDQ2NyAxMS40Nzc0IDM1LjM5MTkgMTEuMjE3NUMzNC45Nzc2IDkuMTk1NDggMzMuMTA5IDcuODE0OCAzMS4wNjQgOC4wMjAyMkMyOS4wMTg5IDguMjI1NjMgMjcuNDU4NSA5Ljk1MDExIDI3LjQ1MDcgMTIuMDE0WiIgZmlsbD0iIzI3MzA0NCIvPgo8L3N2Zz4K" alt="N12">
+            </span>
+          </div>
+
+          <div class="hl-c">
+            <span class="hl-i"><svg viewBox="0 0 24 24" aria-hidden="true" ><path fill="currentColor" stroke="none" d="M13.5 2L4 13.2h5.4L8.9 22 19 10.4h-5.6L13.5 2Z"/></svg></span>
+            <span class="hl-k">ניסיון</span>
+            <span class="hl-n words">מערכות שחוסכות<br>זמן וכסף</span>
+            <span class="hl-d">לא כלי בודד, אלא תשתית שרצה לבד <b>ומביאה תוצאות בשטח</b>.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ticker">
+        <div class="num ltr">02 / 04</div>
+        <div class="strap">
+          <b>30,000+ עוקבים</b><span class="sep"></span>
+          <span class="t">100M+ צפיות בשנה</span><span class="sep"></span>
+          <span class="t">קהלים בארץ ובעולם</span><span class="sep"></span>
+          <span class="t">mako · N12</span>
+        </div>
+        <div class="flag"><i></i> STUDIO</div>
       </div>
     </section>
 
@@ -467,7 +566,7 @@
       </header>
 
       <div class="body">
-        <div class="eyebrow"><span class="n">02</span><span class="bar"></span><span class="t">הוכחה</span></div>
+        <div class="eyebrow"><span class="n">03</span><span class="bar"></span><span class="t">הוכחה</span></div>
         <div class="head">
           <h1>המערכת בנתה קהל אמיתי, <em>לבד</em>.</h1>
           <p class="lede">נתנו למערכת קלט אחד, סיפורים יהודיים, והיא פרסמה כל יום במשך חודשים.
@@ -531,7 +630,7 @@
       </div>
 
       <div class="ticker">
-        <div class="num ltr">02 / 03</div>
+        <div class="num ltr">03 / 04</div>
         <div class="strap">
           <b>1,127,466 צפיות</b><span class="sep"></span>
           <span class="t">141 ימי צפייה מצטברים</span><span class="sep"></span>
@@ -551,7 +650,7 @@
       </header>
 
       <div class="body">
-        <div class="eyebrow"><span class="n">03</span><span class="bar"></span><span class="t">המערכת</span></div>
+        <div class="eyebrow"><span class="n">04</span><span class="bar"></span><span class="t">המערכת</span></div>
         <h1>השפעה בקנה מידה. <em>בכל שפה.</em></h1>
 
         <div class="flow">
@@ -623,7 +722,7 @@
       </div>
 
       <div class="ticker">
-        <div class="num ltr">03 / 03</div>
+        <div class="num ltr">04 / 04</div>
         <div class="strap">
           <b>200+ סרטונים בחודש לכל לקוח</b><span class="sep"></span>
           <span class="t">70+ שפות</span><span class="sep"></span>
