@@ -472,8 +472,10 @@
     direction:ltr; padding:.4em 0;
   }
   .flowsvg svg{ width:100%; height:auto; max-height:100%; display:block; }
-  #stage[dir="rtl"] .flowsvg text{ direction:rtl; }
-  #stage[dir="ltr"] .flowsvg text{ direction:ltr; }
+  /* only the translated labels flip; the network names are Latin and
+     anchored, so reversing their base direction moves them off mark */
+  #stage[dir="rtl"] .flowsvg text[data-i18n]{ direction:rtl; }
+  #stage[dir="ltr"] .flowsvg text[data-i18n]{ direction:ltr; }
   /* who opens the accounts: the one operational question this raises */
   .flownote{
     font-size:.96em; line-height:1.55; color:var(--steel-dk);
