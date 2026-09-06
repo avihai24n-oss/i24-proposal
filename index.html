@@ -81,28 +81,39 @@
     display:flex; flex-direction:column; justify-content:center; gap:1.25em;
     padding:.2em 2.6em 1.6em; min-height:0;
   }
-  .pgrid{ flex:0 0 auto; display:grid; grid-template-columns:repeat(3,1fr); gap:1em; }
-
-  /* what the price buys, spelled out above the detail */
-  .pincl{ display:flex; flex-direction:column; gap:.75em; }
-  .pin-k{
+  /* what one channel costs, set against what one person costs */
+  .cmp{ display:flex; flex-direction:column; gap:.75em; }
+  .cmp-k{
     font-family:var(--display); font-weight:800; font-size:.82em;
     letter-spacing:.16em; color:#ff5b56;
   }
-  .pin-row{
-    display:grid; grid-template-columns:repeat(5,1fr);
+  .cmp-row{
+    display:grid; grid-template-columns:1fr 1fr 1fr;
     border-top:2px solid var(--red); border-bottom:1px solid rgba(255,255,255,.14);
   }
-  .pin{
-    padding:.85em 1.1em .9em; border-inline-start:1px solid rgba(255,255,255,.14);
-    display:flex; flex-direction:column; gap:.2em; min-width:0;
+  .cmp-c{
+    padding:.9em 1.2em 1em; border-inline-start:1px solid rgba(255,255,255,.14);
+    display:flex; flex-direction:column; gap:.15em; min-width:0;
   }
+  .cmp-c:first-child{ border-inline-start:0; }
+  .cmp-l{
+    font-family:var(--display); font-weight:800; font-size:.78em;
+    letter-spacing:.14em; color:rgba(255,255,255,.5);
+  }
+  .cmp-n{
+    font-family:var(--display); font-weight:900; font-size:2.5em;
+    line-height:1.05; letter-spacing:-.03em; color:rgba(255,255,255,.62);
+  }
+  .cmp-s{ font-size:.82em; line-height:1.35; color:rgba(255,255,255,.5); }
+  .cmp-c.win .cmp-l{ color:#ff5b56; }
+  .cmp-c.win .cmp-n{ color:var(--white); }
+  .cmp-c.win .cmp-s{ color:rgba(255,255,255,.72); }
+  .cmp-c.gap .cmp-n{ color:#ff5b56; }
+
+  .pgrid{ flex:0 0 auto; display:grid; grid-template-columns:repeat(3,1fr); gap:1em; }
+
+  /* what the price buys, spelled out above the detail */
   .pin:first-child{ border-inline-start:0; padding-inline-start:0; }
-  .pin-t{
-    font-family:var(--display); font-weight:800; font-size:1.02em;
-    line-height:1.25; color:var(--white);
-  }
-  .pin-s{ font-size:.82em; line-height:1.35; color:rgba(255,255,255,.58); }
   .pcard{
     background:rgba(255,255,255,.045); border:1px solid rgba(255,255,255,.16);
     border-radius:.5em; padding:1.1em 1.3em 1.2em;
@@ -181,12 +192,6 @@
   }
   .pt1{ font-size:.95em; color:rgba(255,255,255,.82); }
   .pt2{ font-size:.85em; color:rgba(255,255,255,.5); }
-  .ppath{ flex:1; min-width:0; text-align:start; display:flex; flex-direction:column; gap:.2em; }
-  .ppn{
-    font-family:var(--display); font-weight:800; font-size:1.02em;
-    letter-spacing:.04em; color:#ff5b56;
-  }
-  .ppnote{ font-size:.8em; color:rgba(255,255,255,.45); }
 
   /* ===================== shared ===================== */
   .body{ padding:1.5em 2.6em 1.4em; display:flex; flex-direction:column; min-height:0; }
@@ -571,6 +576,57 @@
   .langs button:hover{ color:var(--white); }
   .langs button[aria-pressed="true"]{ background:var(--red); color:var(--white); }
 
+
+  /* ---------------------------------------------------------------
+     04 on paper. Every colour below is scoped to #s4, so the dark
+     screens keep theirs. Red is spent on our own price and the gap,
+     nowhere else.
+     --------------------------------------------------------------- */
+  #s4 .eyebrow .n{ color:var(--navy); }
+  #s4 .eyebrow .bar{ background:var(--line-mid); }
+  #s4 .eyebrow .t{ color:var(--steel-dk); }
+  #s4 h1{ color:var(--navy); }
+  #s4 h1 em{ color:var(--navy); }
+
+  #s4 .cmp-k{ color:var(--steel-dk); }
+  #s4 .cmp-row{ border-top:2px solid var(--navy); border-bottom:1px solid var(--rule-lt); }
+  #s4 .cmp-c{ border-inline-start:1px solid var(--rule-lt); }
+  #s4 .cmp-l{ color:var(--steel-dk); }
+  #s4 .cmp-n{ color:var(--line-mid); }
+  #s4 .cmp-s{ color:var(--steel-dk); }
+  #s4 .cmp-c.win .cmp-l{ color:var(--red); }
+  #s4 .cmp-c.win .cmp-n{ color:var(--red); }
+  #s4 .cmp-c.win .cmp-s{ color:var(--navy); }
+  #s4 .cmp-c.gap .cmp-l{ color:var(--steel-dk); }
+  #s4 .cmp-c.gap .cmp-n{ color:var(--navy); }
+
+  #s4 .pcard{ background:var(--white); border:1px solid var(--rule-lt); }
+  #s4 .pcard.hot{ border-color:var(--line-mid); }
+  #s4 .pk{ color:var(--steel-dk); }
+  #s4 .plist li{ color:var(--navy); }
+  #s4 .plist li::before{ color:var(--line-mid); }
+  #s4 .plist li b{ color:var(--navy); }
+  #s4 .ptotals{ border-top:1px solid var(--rule-lt); }
+  #s4 .ptotal{ color:var(--steel-dk); }
+  #s4 .ptotal b{ color:var(--navy); }
+  #s4 .ptotal.big{ color:var(--navy); }
+  #s4 .pfoot{ color:var(--steel-dk); }
+  #s4 .op{ color:var(--navy); }
+  #s4 .op-i{ color:var(--steel-dk); opacity:.75; }
+
+  #s4 .ptl-k{ color:var(--steel-dk); }
+  #s4 .ptl-row{ border-top:1px solid var(--line-mid); border-bottom:1px solid var(--rule-lt); }
+  #s4 .ptl-s{ border-inline-start:1px solid var(--rule-lt); }
+  #s4 .ptl-n{ color:var(--line-mid); }
+  #s4 .ptl-t{ color:var(--navy); }
+
+  #s4 .pband{ border-top:2px solid var(--navy); }
+  #s4 .pn{ color:var(--navy); }
+  #s4 .pper{ color:var(--steel-dk); }
+  #s4 .pt0{ color:var(--steel-dk); }
+  #s4 .pt1{ color:var(--navy); }
+  #s4 .pt2{ color:var(--steel-dk); }
+
   @media (prefers-reduced-motion:reduce){ .slide{ transition:none; } }
 
   #turn{ display:none; }
@@ -950,7 +1006,7 @@
     </section>
 
     <!-- ======================= 05  the pilot ======================= -->
-    <section class="slide cover" id="s4">
+    <section class="slide light" id="s4">
       <header class="masthead">
         <div class="mh-side">
           <span class="mh-i24"><svg fill="#ffffff"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1796 910" aria-hidden="true"><path d="M464 904l-50-86h-42l-32 165h45l17-90 52 90h39l32-165h-45zM535 983h131l8-41h-87l5-26h78l7-36h-78l4-22h86l8-40h-131zM926 818l-47 94-13-94h-39l-49 94-10-94h-48l23 165h39l51-94 14 94h39l86-165h-46zM1026 864q1-5 5.5-8t12.5-3q11 0 22 4t21 12l29-32q-12-10-27-15.5t-36-5.5q-29 0-49 14.5t-24 37.5v0q-5 25 10.5 35t40.5 16q16 4 21 7.5t4 8.5h-1q-1 6-6 9t-14 3q-14 0-26.5-5t-22.5-15l-31 30q12 13 30.5 20t40.5 7q29 0 50-14t26-39v0q4-23-10-34t-41-17q-16-4-21-7t-4-9v0 0zM1283 574l286-313-61 313h-225zM1796 574h-112l111-573h-225l-521 573h-485q13-47 50.5-79t94.5-32h228q47 0 88.5-18.5t72.5-50 49.5-73.5 18.5-89q0-48-18.5-90t-49.5-73-72.5-49.5-88.5-18.5h-442l-34 173h476q22 0 38.5 17.5t16.5 40.5-16.5 40.5-38.5 17.5h-228q-60 0-113.5 20t-96.5 57-72.5 88.5-42.5 113.5l-25 135q-14 15-64.5 63t-74.5 40q-11-4-11.5-17.5t-0.5-20.5l102-524h-191l-15 75.5t-32.5 166-32.5 167-15 78.5q-14 69-22 129t8 93q25 52 75.5 35.5t104.5-62 101.5-100.5 66.5-80h1116l-33 173h116q26 0 46-16.5t25-42.5l23-114h111l34-173zM358 1h-73q-52 0-92 33t-49 84l-11 56h191z"></path></svg></span>
@@ -968,31 +1024,26 @@
       </div>
 
       <div class="pilot">
-        <div class="pincl">
-          <div data-i18n="s6.incl" class="pin-k">רשת תוכן מנוהלת מקצה לקצה &nbsp;·&nbsp; $10,000 לחודש</div>
-          <div class="pin-row">
-            <div class="pin">
-              <span data-i18n="s6.i1" class="pin-t">עיצוב ופיתוח הפלטפורמה</span>
-              <span data-i18n="s6.i1s" class="pin-s">בנייה והתאמה של המערכת ל-i24</span>
-            </div>
-            <div class="pin">
-              <span data-i18n="s6.i2" class="pin-t">הקמה וחיבור החשבונות</span>
-              <span data-i18n="s6.i2s" class="pin-s">20 חשבונות, מחוברים למערכת</span>
-            </div>
-            <div class="pin">
-              <span data-i18n="s6.i3" class="pin-t">הפקת התוכן</span>
-              <span data-i18n="s6.i3s" class="pin-s">וידאו, קול, תמונה, כתוביות, בכל שפה</span>
-            </div>
-            <div class="pin">
-              <span data-i18n="s6.i4" class="pin-t">תפעול ופרסום</span>
-              <span data-i18n="s6.i4s" class="pin-s">פרסום אוטומטי בכל השווקים, 24/7</span>
-            </div>
-            <div class="pin">
-              <span data-i18n="s6.i5" class="pin-t">אופטימיזציה ותמיכה</span>
-              <span data-i18n="s6.i5s" class="pin-s">שיפור מתמשך על בסיס הנתונים</span>
-            </div>
+      <div class="cmp">
+        <div data-i18n="cmp.k" class="cmp-k">עלות של ערוץ אחד, לחודש</div>
+        <div class="cmp-row">
+          <div class="cmp-c">
+            <span data-i18n="cmp.l1" class="cmp-l">מנהלת סושיאל</span>
+            <span data-i18n="cmp.n1" class="cmp-n">$3,000+</span>
+            <span data-i18n="cmp.s1" class="cmp-s">שכר חודשי, ערוץ אחד, ובלי הפקת התוכן</span>
+          </div>
+          <div class="cmp-c win">
+            <span data-i18n="cmp.l2" class="cmp-l">AutoVids</span>
+            <span data-i18n="cmp.n2" class="cmp-n">$500</span>
+            <span data-i18n="cmp.s2" class="cmp-s">ערוץ מנוהל מקצה לקצה, כולל הפקה ופרסום</span>
+          </div>
+          <div class="cmp-c gap">
+            <span data-i18n="cmp.l3" class="cmp-l">הפער</span>
+            <span class="cmp-n"><span class="ltr">×6</span></span>
+            <span data-i18n="cmp.s3" class="cmp-s">אותה נוכחות, בשישית מהעלות</span>
           </div>
         </div>
+      </div>
 
         <div class="pgrid">
           <div class="pcard">
@@ -1069,10 +1120,6 @@
             <div data-i18n="s6.t1" class="pt1">טכנולוגיה, תוכן ותפעול</div>
             <div data-i18n="s6.t2" class="pt2">תקציב מדיה בתשלום נפרד</div>
           </div>
-          <div class="ppath">
-            <div data-i18n="s6.path" class="ppn">5 שווקים &nbsp;·&nbsp; אופטימיזציה &nbsp;·&nbsp; הרחבה ל-70 שווקים</div>
-            <div data-i18n="s6.note" class="ppnote">היקף ההרחבה והתמחור מותאמים ככל שהרשת גדלה.</div>
-          </div>
         </div>
       </div>
     </section>
@@ -1094,7 +1141,7 @@
      language: swaps the copy, the reading direction, and the
      number grouping. Hebrew reads right to left, the others left.
      ============================================================ */
-  var DICT = {"he": {"s0.h1": "השפעה בסקייל. <em>בכל שפה.</em>", "s1.eyebrow": "הסטודיו", "s1.plate": "חברות שעובדות איתנו", "s2.h1": "נעים להכיר.", "s2.k1": "קהל", "s2.d1": "עוקבים בכל הרשתות יחד, מהם <b>30,000</b> באינסטגרם.", "s2.k2": "טווח", "s2.d2": "צפיות ברשתות בשנה האחרונה. מגיעים לקהלים מגוונים, <b>בארץ ומחוצה לה</b>.", "s2.k3": "לקוחות", "s2.d3": "עובדים עם <b>גופים גדולים</b>, מותגי מדיה מובילים בשוק הישראלי.", "s2.k4": "טכנולוגיה", "s2.n4": "מנוע משלנו", "s2.d4": "בנינו את הפייפליין <b>מקצה לקצה</b>, לא חיברנו כלים מהמדף.", "s3.eyebrow": "הוכחה", "s3.h1": "ארבעה חודשים. קהל אמיתי.<br><em>אפס שקלים בפרסום.</em>", "s4.eyebrow": "המערכת", "s4.h1": "השפעה בסקייל. <em>בכל שפה.</em>", "s4.inH": "הפיד שלכם <span class=\"ltr\">+ AI</span>", "s4.inS": "החומר שלכם, או נושא שה‑AI אוסף ומאמת", "s4.eng": "מנוע המדיה", "s4.st1": "תסריט", "s4.st2": "קול", "s4.st3": "וידאו", "s4.st4": "מוזיקה", "s4.st5": "כתוביות", "s4.auto": "אוטומטי לחלוטין, מקצה לקצה, <span class=\"ltr\">24/7</span>", "s4.humH": "אדם בלופ", "s4.humS": "בקרה או עריכה, אופציונלי", "s4.t2": "שפות: עברית, אנגלית, צרפתית, ספרדית, ערבית ועוד", "s4.t3": "תפוקה, באותו הצוות", "s4.t4": "תמיד פעיל, דקות עד סרטון", "s3.n1": "1,127,466", "s2.n1": "50,000+", "aria.next": "השקופית הבאה", "aria.prev": "השקופית הקודמת", "s3.kViews": "אינטראקציות", "s3.kSocial": "עוקבים, אורגנית", "s3.lede": "סיפור ליום. סרטונים על תרבות יהודית שנוצרים אוטומטית מקצה לקצה, מאפריל עד אוגוסט.", "s3.nSocial": "5,000+", "s3.c1": "אפריל עד אוגוסט, ארבעה חודשים", "s3.c2": "אפס תקציב פרסום", "s3.c3": "תוכן שנוצר על ידי AI, מקצה לקצה", "s3.m1": "אפריל", "s3.m2": "מאי", "s3.m3": "יוני", "s3.m4": "יולי", "s3.m5": "אוגוסט", "s4.note": "<b>אנחנו פותחים את החשבונות בשבילכם</b>, עד לכמות שכתובות המייל ומספרי הטלפון שברשותנו מאפשרים. אם דרושים חשבונות נוספים מעבר לכך, <b>i24 פותחת אותם ואנחנו מחברים אותם למערכת שלנו</b>.", "s6.eyebrow": "הפיילוט", "s6.h1": "חמישה שווקים. שלושים יום. <em>ניהול מלא.</em>", "s6.k1": "הפיילוט", "s6.a1": "<b>5</b> שווקים", "s6.a2": "<b>4</b> פלטפורמות", "s6.a3": "השווקים הראשונים באוויר תוך <b>30 יום</b>", "s6.k2": "בכל שוק, בכל שבוע", "s6.b1": "<b>7</b> סרטונים מבוססי AI", "s6.b2": "<b>4</b> סרטוני i24", "s6.b3": "<b>3 עד 5</b> פריטי תוכן קצרים", "s6.b4": "ברייקינג &nbsp;·&nbsp; עובדות &nbsp;·&nbsp; ציטוטים &nbsp;·&nbsp; סיפורים מקומיים &nbsp;·&nbsp; תמונות", "s6.k3": "מה אנחנו מפעילים", "s6.per": "לחודש", "s6.t1": "טכנולוגיה, תוכן ותפעול", "s6.t2": "תקציב מדיה בתשלום נפרד", "s6.path": "5 שווקים &nbsp;·&nbsp; אופטימיזציה &nbsp;·&nbsp; הרחבה ל-70 שווקים", "s6.note": "היקף ההרחבה והתמחור מותאמים ככל שהרשת גדלה.", "s6.c7": "פתיחת החשבונות עד לכמות שכתובות המייל ומספרי הטלפון שברשותנו מאפשרים. חשבונות נוספים נפתחים על ידי i24 ומתחברים למערכת שלנו.", "s0.flow": "אוטומטי לחלוטין &nbsp;←&nbsp; תוכן 24/7 &nbsp;←&nbsp; צמיחה", "s6.total2": "<b>60 עד 70</b> פריטי תוכן בחודש, בכל שוק", "s6.total3": "<b>300 עד 350</b> פריטי תוכן בחודש, בחמשת השווקים", "s6.a4": "<b>20</b> חשבונות בסך הכל, 5 שווקים × 4 פלטפורמות", "s6.incl": "רשת תוכן מנוהלת מקצה לקצה &nbsp;·&nbsp; $10,000 לחודש", "s6.i1": "עיצוב ופיתוח הפלטפורמה", "s6.i1s": "בנייה והתאמה של המערכת ל-i24", "s6.i2": "הקמה וחיבור החשבונות", "s6.i2s": "20 חשבונות, מחוברים למערכת", "s6.i3": "הפקת התוכן", "s6.i3s": "וידאו, קול, תמונה, כתוביות, בכל שפה", "s6.i4": "תפעול ופרסום", "s6.i4s": "פרסום אוטומטי בכל השווקים, 24/7", "s6.i5": "אופטימיזציה ותמיכה", "s6.i5s": "שיפור מתמשך על בסיס הנתונים", "s6.o1": "מחקר, עיצוב ופיתוח הפלטפורמה", "s6.o2": "הפקת תוכן AI", "s6.o3": "פתיחת וניהול החשבונות", "s6.o4": "פרסום אוטומטי", "s6.o5": "התאמה מקומית לכל שוק", "s6.o6": "ניטור טרנדים מקומיים", "s6.o7": "תכנון לוח תוכן", "s6.o8": "התאמה לכל פלטפורמה", "s6.o9": "דשבורד ואנליטיקס", "s6.o10": "ניטור תקינות הפרסום", "s6.o11": "A/B Testing", "s6.o12": "אופטימיזציה מתמשכת", "s6.net": "רשת תוכן מנוהלת מקצה לקצה", "s6.tl": "פיילוט 3 חודשים", "s6.m1": "חודש ראשון: הקמה והשקה", "s6.m2": "חודש שני: פיתוח יכולות נוספות, כוונון המערכת, מדידה ואופטימיזציה", "s6.m3": "חודש שלישי: הרחבה והחלטה על סקייל", "turn.msg": "סובבו את המכשיר לרוחב", "turn.sub": "המצגת בנויה במסך רחב"}, "en": {"s0.h1": "Influence at scale. <em>In every language.</em>", "s1.eyebrow": "The studio", "s1.plate": "Companies we work with", "s2.h1": "Pleased to meet you.", "s2.k1": "Audience", "s2.d1": "Followers across all our channels, <b>30,000</b> of them on Instagram.", "s2.k2": "Reach", "s2.d2": "Views across our channels in the past year, reaching varied audiences <b>in Israel and beyond</b>.", "s2.k3": "Clients", "s2.d3": "We work with <b>major organisations</b>, leading media brands in the Israeli market.", "s2.k4": "Technology", "s2.n4": "Our own engine", "s2.d4": "We built the pipeline <b>end to end</b>, not a bundle of off-the-shelf tools.", "s3.eyebrow": "Proof", "s3.h1": "Four months. A real audience.<br><em>Zero spent on marketing.</em>", "s4.eyebrow": "The system", "s4.h1": "Influence at scale. <em>In every language.</em>", "s4.inH": "Your feed <span class=\"ltr\">+ AI</span>", "s4.inS": "Your material, or a topic the AI gathers and verifies", "s4.eng": "The media engine", "s4.st1": "Script", "s4.st2": "Voice", "s4.st3": "Video", "s4.st4": "Music", "s4.st5": "Captions", "s4.auto": "Fully automatic, end to end, <span class=\"ltr\">24/7</span>", "s4.humH": "Human in the loop", "s4.humS": "Review or edit, optional", "s4.t2": "Languages: Hebrew, English, French, Spanish, Arabic and more", "s4.t3": "Output, with the same team", "s4.t4": "Always on, minutes to a video", "s3.n1": "1,127,466", "s2.n1": "50,000+", "aria.next": "Next slide", "aria.prev": "Previous slide", "s3.kViews": "Interactions", "s3.kSocial": "Followers, organic", "s3.lede": "Sipur LeYom. Videos on Jewish culture, generated end to end automatically, April to August.", "s3.nSocial": "5,000+", "s3.c1": "April to August, four months", "s3.c2": "No advertising budget", "s3.c3": "Content generated by AI, end to end", "s3.m1": "April", "s3.m2": "May", "s3.m3": "June", "s3.m4": "July", "s3.m5": "August", "s4.note": "<b>We open the accounts for you</b>, up to what the email addresses and phone numbers on our side allow. If more accounts are needed beyond that, <b>i24 opens them and we connect them into our system</b>.", "s6.eyebrow": "The pilot", "s6.h1": "Five markets. Thirty days. <em>Fully managed.</em>", "s6.k1": "The pilot", "s6.a1": "<b>5</b> markets", "s6.a2": "<b>4</b> platforms", "s6.a3": "First markets live within <b>30 days</b>", "s6.k2": "Every market, every week", "s6.b1": "<b>7</b> AI based videos", "s6.b2": "<b>4</b> i24 videos", "s6.b3": "<b>3 to 5</b> lightweight content pieces", "s6.b4": "Breaking &nbsp;·&nbsp; Facts &nbsp;·&nbsp; Quotes &nbsp;·&nbsp; Local stories &nbsp;·&nbsp; Images", "s6.k3": "What we run", "s6.per": "per month", "s6.t1": "Technology, content and operation", "s6.t2": "Paid media budget separate", "s6.path": "5 markets &nbsp;·&nbsp; Optimize &nbsp;·&nbsp; Scale to 70+", "s6.note": "Expansion scope and pricing adjust as the network grows.", "s6.c7": "Account setup up to what our own email addresses and phone numbers allow. Further accounts are opened by i24 and connected into our system.", "s0.flow": "Fully automated &nbsp;→&nbsp; 24/7 content &nbsp;→&nbsp; growth", "s6.total2": "<b>60 to 70</b> content pieces per month, per market", "s6.total3": "<b>300 to 350</b> content pieces per month across the five markets", "s6.a4": "<b>20</b> accounts in total, 5 markets × 4 platforms", "s6.incl": "A managed content network, end to end &nbsp;·&nbsp; $10,000 a month", "s6.i1": "Platform design and development", "s6.i1s": "Built and adapted to i24", "s6.i2": "Account setup and connection", "s6.i2s": "20 accounts, connected to the system", "s6.i3": "Content production", "s6.i3s": "Video, voice, imagery, captions, in every language", "s6.i4": "Operation and publishing", "s6.i4s": "Automated publishing across every market, 24/7", "s6.i5": "Optimization and support", "s6.i5s": "Continuous improvement from the data", "s6.o1": "Platform research, design and development", "s6.o2": "AI content production", "s6.o3": "Account setup and management", "s6.o4": "Automated publishing", "s6.o5": "Localization for every market", "s6.o6": "Local trend monitoring", "s6.o7": "Content calendar planning", "s6.o8": "Adapted to every platform", "s6.o9": "Dashboard and analytics", "s6.o10": "Publishing health monitoring", "s6.o11": "A/B testing", "s6.o12": "Continuous optimization", "s6.net": "A managed content network, end to end", "s6.tl": "3 month pilot", "s6.m1": "Month 1: build and launch", "s6.m2": "Month 2: new capabilities, system tuning, measurement and optimization", "s6.m3": "Month 3: expand and decide on scale", "turn.msg": "Turn your device sideways", "turn.sub": "The deck is built for a wide screen"}, "fr": {"s0.h1": "Une influence à grande échelle. <em>Dans toutes les langues.</em>", "s1.eyebrow": "Le studio", "s1.plate": "Ils travaillent avec nous", "s2.h1": "Enchantés.", "s2.k1": "Audience", "s2.d1": "Abonnés sur l’ensemble de nos réseaux, dont <b>30 000</b> sur Instagram.", "s2.k2": "Portée", "s2.d2": "Vues sur nos réseaux au cours de l’année écoulée, auprès de publics variés <b>en Israël et au-delà</b>.", "s2.k3": "Clients", "s2.d3": "Nous travaillons avec de <b>grandes organisations</b>, des marques médias de premier plan en Israël.", "s2.k4": "Technologie", "s2.n4": "Notre propre moteur", "s2.d4": "Nous avons bâti le pipeline <b>de bout en bout</b>, pas un assemblage d’outils du marché.", "s3.eyebrow": "Preuve", "s3.h1": "Quatre mois. Une vraie audience.<br><em>Zéro euro de publicité.</em>", "s4.eyebrow": "Le système", "s4.h1": "Une influence à grande échelle. <em>Dans toutes les langues.</em>", "s4.inH": "Votre flux <span class=\"ltr\">+ IA</span>", "s4.inS": "Vos contenus, ou un sujet que l’IA collecte et vérifie", "s4.eng": "Le moteur média", "s4.st1": "Script", "s4.st2": "Voix", "s4.st3": "Vidéo", "s4.st4": "Musique", "s4.st5": "Sous-titres", "s4.auto": "Entièrement automatique, de bout en bout, <span class=\"ltr\">24/7</span>", "s4.humH": "Humain dans la boucle", "s4.humS": "Contrôle ou édition, en option", "s4.t2": "Langues : hébreu, anglais, français, espagnol, arabe et plus", "s4.t3": "Production, à effectif constant", "s4.t4": "Toujours actif, quelques minutes par vidéo", "s3.n1": "1 127 466", "s2.n1": "50 000+", "aria.next": "Diapositive suivante", "aria.prev": "Diapositive précédente", "s3.kViews": "Interactions", "s3.kSocial": "Abonnés, organiques", "s3.lede": "Sipur LeYom. Des vidéos sur la culture juive, générées automatiquement de bout en bout, d’avril à août.", "s3.nSocial": "5 000+", "s3.c1": "D’avril à août, quatre mois", "s3.c2": "Aucun budget publicitaire", "s3.c3": "Contenu généré par IA, de bout en bout", "s3.m1": "Avril", "s3.m2": "Mai", "s3.m3": "Juin", "s3.m4": "Juillet", "s3.m5": "Août", "s4.note": "<b>Nous ouvrons les comptes pour vous</b>, dans la limite des adresses e-mail et des numéros de téléphone dont nous disposons. Si d’autres comptes sont nécessaires, <b>i24 les ouvre et nous les connectons à notre système</b>.", "s6.eyebrow": "Le pilote", "s6.h1": "Cinq marchés. Trente jours. <em>Entièrement géré.</em>", "s6.k1": "Le pilote", "s6.a1": "<b>5</b> marchés", "s6.a2": "<b>4</b> plateformes", "s6.a3": "Premiers marchés en ligne sous <b>30 jours</b>", "s6.k2": "Chaque marché, chaque semaine", "s6.b1": "<b>7</b> vidéos basées sur l’IA", "s6.b2": "<b>4</b> vidéos i24", "s6.b3": "<b>3 à 5</b> contenus courts", "s6.b4": "Breaking &nbsp;·&nbsp; Faits &nbsp;·&nbsp; Citations &nbsp;·&nbsp; Histoires locales &nbsp;·&nbsp; Images", "s6.k3": "Ce que nous opérons", "s6.per": "par mois", "s6.t1": "Technologie, contenu et exploitation", "s6.t2": "Budget média payant en sus", "s6.path": "5 marchés &nbsp;·&nbsp; Optimiser &nbsp;·&nbsp; Passer à 70+", "s6.note": "Le périmètre et le tarif s’ajustent à mesure que le réseau grandit.", "s6.c7": "Ouverture des comptes dans la limite de nos adresses e-mail et numéros de téléphone. Les comptes supplémentaires sont ouverts par i24 puis connectés à notre système.", "s0.flow": "Entièrement automatisé &nbsp;→&nbsp; du contenu 24/7 &nbsp;→&nbsp; de la croissance", "s6.total2": "<b>60 à 70</b> contenus par mois, par marché", "s6.total3": "<b>300 à 350</b> contenus par mois sur les cinq marchés", "s6.a4": "<b>20</b> comptes au total, 5 marchés × 4 plateformes", "s6.incl": "Un réseau de contenu géré de bout en bout &nbsp;·&nbsp; 10 000 $ par mois", "s6.i1": "Conception et développement de la plateforme", "s6.i1s": "Construite et adaptée pour i24", "s6.i2": "Création et connexion des comptes", "s6.i2s": "20 comptes, connectés au système", "s6.i3": "Production de contenu", "s6.i3s": "Vidéo, voix, images, sous-titres, dans chaque langue", "s6.i4": "Exploitation et publication", "s6.i4s": "Publication automatisée sur tous les marchés, 24/7", "s6.i5": "Optimisation et support", "s6.i5s": "Amélioration continue à partir des données", "s6.o1": "Recherche, conception et développement", "s6.o2": "Production de contenu IA", "s6.o3": "Ouverture et gestion des comptes", "s6.o4": "Publication automatisée", "s6.o5": "Localisation pour chaque marché", "s6.o6": "Veille des tendances locales", "s6.o7": "Planification du calendrier", "s6.o8": "Adaptation à chaque plateforme", "s6.o9": "Tableau de bord et analyses", "s6.o10": "Contrôle de la publication", "s6.o11": "Tests A/B", "s6.o12": "Optimisation continue", "s6.net": "Un réseau de contenu géré de bout en bout", "s6.tl": "Pilote de 3 mois", "s6.m1": "Mois 1 : construction et lancement", "s6.m2": "Mois 2 : nouvelles fonctionnalités, réglage du système, mesure et optimisation", "s6.m3": "Mois 3 : extension et décision de passage à l’échelle", "turn.msg": "Tournez votre appareil", "turn.sub": "La présentation est conçue pour un écran large"}};
+  var DICT = {"he": {"s0.h1": "השפעה בסקייל. <em>בכל שפה.</em>", "s1.eyebrow": "הסטודיו", "s1.plate": "חברות שעובדות איתנו", "s2.h1": "נעים להכיר.", "s2.k1": "קהל", "s2.d1": "עוקבים בכל הרשתות יחד, מהם <b>30,000</b> באינסטגרם.", "s2.k2": "טווח", "s2.d2": "צפיות ברשתות בשנה האחרונה. מגיעים לקהלים מגוונים, <b>בארץ ומחוצה לה</b>.", "s2.k3": "לקוחות", "s2.d3": "עובדים עם <b>גופים גדולים</b>, מותגי מדיה מובילים בשוק הישראלי.", "s2.k4": "טכנולוגיה", "s2.n4": "מנוע משלנו", "s2.d4": "בנינו את הפייפליין <b>מקצה לקצה</b>, לא חיברנו כלים מהמדף.", "s3.eyebrow": "הוכחה", "s3.h1": "ארבעה חודשים. קהל אמיתי.<br><em>אפס שקלים בפרסום.</em>", "s4.eyebrow": "המערכת", "s4.h1": "השפעה בסקייל. <em>בכל שפה.</em>", "s4.inH": "הפיד שלכם <span class=\"ltr\">+ AI</span>", "s4.inS": "החומר שלכם, או נושא שה‑AI אוסף ומאמת", "s4.eng": "מנוע המדיה", "s4.st1": "תסריט", "s4.st2": "קול", "s4.st3": "וידאו", "s4.st4": "מוזיקה", "s4.st5": "כתוביות", "s4.auto": "אוטומטי לחלוטין, מקצה לקצה, <span class=\"ltr\">24/7</span>", "s4.humH": "אדם בלופ", "s4.humS": "בקרה או עריכה, אופציונלי", "s4.t2": "שפות: עברית, אנגלית, צרפתית, ספרדית, ערבית ועוד", "s4.t3": "תפוקה, באותו הצוות", "s4.t4": "תמיד פעיל, דקות עד סרטון", "s3.n1": "1,127,466", "s2.n1": "50,000+", "aria.next": "השקופית הבאה", "aria.prev": "השקופית הקודמת", "s3.kViews": "אינטראקציות", "s3.kSocial": "עוקבים, אורגנית", "s3.lede": "סיפור ליום. סרטונים על תרבות יהודית שנוצרים אוטומטית מקצה לקצה, מאפריל עד אוגוסט.", "s3.nSocial": "5,000+", "s3.c1": "אפריל עד אוגוסט, ארבעה חודשים", "s3.c2": "אפס תקציב פרסום", "s3.c3": "תוכן שנוצר על ידי AI, מקצה לקצה", "s3.m1": "אפריל", "s3.m2": "מאי", "s3.m3": "יוני", "s3.m4": "יולי", "s3.m5": "אוגוסט", "s4.note": "<b>אנחנו פותחים את החשבונות בשבילכם</b>, עד לכמות שכתובות המייל ומספרי הטלפון שברשותנו מאפשרים. אם דרושים חשבונות נוספים מעבר לכך, <b>i24 פותחת אותם ואנחנו מחברים אותם למערכת שלנו</b>.", "s6.eyebrow": "הפיילוט", "s6.h1": "חמישה שווקים. שלושים יום. <em>ניהול מלא.</em>", "s6.k1": "הפיילוט", "s6.a1": "<b>5</b> שווקים", "s6.a2": "<b>4</b> פלטפורמות", "s6.a3": "השווקים הראשונים באוויר תוך <b>30 יום</b>", "s6.k2": "בכל שוק, בכל שבוע", "s6.b1": "<b>7</b> סרטונים מבוססי AI", "s6.b2": "<b>4</b> סרטוני i24", "s6.b3": "<b>3 עד 5</b> פריטי תוכן קצרים", "s6.b4": "ברייקינג &nbsp;·&nbsp; עובדות &nbsp;·&nbsp; ציטוטים &nbsp;·&nbsp; סיפורים מקומיים &nbsp;·&nbsp; תמונות", "s6.k3": "מה אנחנו מפעילים", "s6.per": "לחודש", "s6.t1": "טכנולוגיה, תוכן ותפעול", "s6.t2": "תקציב מדיה בתשלום נפרד", "s6.c7": "פתיחת החשבונות עד לכמות שכתובות המייל ומספרי הטלפון שברשותנו מאפשרים. חשבונות נוספים נפתחים על ידי i24 ומתחברים למערכת שלנו.", "s0.flow": "אוטומטי לחלוטין &nbsp;←&nbsp; תוכן 24/7 &nbsp;←&nbsp; צמיחה", "s6.total2": "<b>60 עד 70</b> פריטי תוכן בחודש, בכל שוק", "s6.total3": "<b>300 עד 350</b> פריטי תוכן בחודש, בחמשת השווקים", "s6.a4": "<b>20</b> חשבונות בסך הכל, 5 שווקים × 4 פלטפורמות", "s6.o1": "מחקר, עיצוב ופיתוח הפלטפורמה", "s6.o2": "הפקת תוכן AI", "s6.o3": "פתיחת וניהול החשבונות", "s6.o4": "פרסום אוטומטי", "s6.o5": "התאמה מקומית לכל שוק", "s6.o6": "ניטור טרנדים מקומיים", "s6.o7": "תכנון לוח תוכן", "s6.o8": "התאמה לכל פלטפורמה", "s6.o9": "דשבורד ואנליטיקס", "s6.o10": "ניטור תקינות הפרסום", "s6.o11": "A/B Testing", "s6.o12": "אופטימיזציה מתמשכת", "s6.net": "רשת תוכן מנוהלת מקצה לקצה", "s6.tl": "פיילוט 3 חודשים", "s6.m1": "חודש ראשון: הקמה והשקה", "s6.m2": "חודש שני: פיתוח יכולות נוספות, כוונון המערכת, מדידה ואופטימיזציה", "s6.m3": "חודש שלישי: הרחבה והחלטה על סקייל", "turn.msg": "סובבו את המכשיר לרוחב", "turn.sub": "המצגת בנויה במסך רחב", "cmp.k": "עלות של ערוץ אחד, לחודש", "cmp.l1": "מנהלת סושיאל", "cmp.n1": "$3,000+", "cmp.s1": "שכר חודשי, ערוץ אחד, ובלי הפקת התוכן", "cmp.l2": "AutoVids", "cmp.n2": "$500", "cmp.s2": "ערוץ מנוהל מקצה לקצה, כולל הפקה ופרסום", "cmp.l3": "הפער", "cmp.s3": "אותה נוכחות, בשישית מהעלות"}, "en": {"s0.h1": "Influence at scale. <em>In every language.</em>", "s1.eyebrow": "The studio", "s1.plate": "Companies we work with", "s2.h1": "Pleased to meet you.", "s2.k1": "Audience", "s2.d1": "Followers across all our channels, <b>30,000</b> of them on Instagram.", "s2.k2": "Reach", "s2.d2": "Views across our channels in the past year, reaching varied audiences <b>in Israel and beyond</b>.", "s2.k3": "Clients", "s2.d3": "We work with <b>major organisations</b>, leading media brands in the Israeli market.", "s2.k4": "Technology", "s2.n4": "Our own engine", "s2.d4": "We built the pipeline <b>end to end</b>, not a bundle of off-the-shelf tools.", "s3.eyebrow": "Proof", "s3.h1": "Four months. A real audience.<br><em>Zero spent on marketing.</em>", "s4.eyebrow": "The system", "s4.h1": "Influence at scale. <em>In every language.</em>", "s4.inH": "Your feed <span class=\"ltr\">+ AI</span>", "s4.inS": "Your material, or a topic the AI gathers and verifies", "s4.eng": "The media engine", "s4.st1": "Script", "s4.st2": "Voice", "s4.st3": "Video", "s4.st4": "Music", "s4.st5": "Captions", "s4.auto": "Fully automatic, end to end, <span class=\"ltr\">24/7</span>", "s4.humH": "Human in the loop", "s4.humS": "Review or edit, optional", "s4.t2": "Languages: Hebrew, English, French, Spanish, Arabic and more", "s4.t3": "Output, with the same team", "s4.t4": "Always on, minutes to a video", "s3.n1": "1,127,466", "s2.n1": "50,000+", "aria.next": "Next slide", "aria.prev": "Previous slide", "s3.kViews": "Interactions", "s3.kSocial": "Followers, organic", "s3.lede": "Sipur LeYom. Videos on Jewish culture, generated end to end automatically, April to August.", "s3.nSocial": "5,000+", "s3.c1": "April to August, four months", "s3.c2": "No advertising budget", "s3.c3": "Content generated by AI, end to end", "s3.m1": "April", "s3.m2": "May", "s3.m3": "June", "s3.m4": "July", "s3.m5": "August", "s4.note": "<b>We open the accounts for you</b>, up to what the email addresses and phone numbers on our side allow. If more accounts are needed beyond that, <b>i24 opens them and we connect them into our system</b>.", "s6.eyebrow": "The pilot", "s6.h1": "Five markets. Thirty days. <em>Fully managed.</em>", "s6.k1": "The pilot", "s6.a1": "<b>5</b> markets", "s6.a2": "<b>4</b> platforms", "s6.a3": "First markets live within <b>30 days</b>", "s6.k2": "Every market, every week", "s6.b1": "<b>7</b> AI based videos", "s6.b2": "<b>4</b> i24 videos", "s6.b3": "<b>3 to 5</b> lightweight content pieces", "s6.b4": "Breaking &nbsp;·&nbsp; Facts &nbsp;·&nbsp; Quotes &nbsp;·&nbsp; Local stories &nbsp;·&nbsp; Images", "s6.k3": "What we run", "s6.per": "per month", "s6.t1": "Technology, content and operation", "s6.t2": "Paid media budget separate", "s6.c7": "Account setup up to what our own email addresses and phone numbers allow. Further accounts are opened by i24 and connected into our system.", "s0.flow": "Fully automated &nbsp;→&nbsp; 24/7 content &nbsp;→&nbsp; growth", "s6.total2": "<b>60 to 70</b> content pieces per month, per market", "s6.total3": "<b>300 to 350</b> content pieces per month across the five markets", "s6.a4": "<b>20</b> accounts in total, 5 markets × 4 platforms", "s6.o1": "Platform research, design and development", "s6.o2": "AI content production", "s6.o3": "Account setup and management", "s6.o4": "Automated publishing", "s6.o5": "Localization for every market", "s6.o6": "Local trend monitoring", "s6.o7": "Content calendar planning", "s6.o8": "Adapted to every platform", "s6.o9": "Dashboard and analytics", "s6.o10": "Publishing health monitoring", "s6.o11": "A/B testing", "s6.o12": "Continuous optimization", "s6.net": "A managed content network, end to end", "s6.tl": "3 month pilot", "s6.m1": "Month 1: build and launch", "s6.m2": "Month 2: new capabilities, system tuning, measurement and optimization", "s6.m3": "Month 3: expand and decide on scale", "turn.msg": "Turn your device sideways", "turn.sub": "The deck is built for a wide screen", "cmp.k": "Cost of one channel, per month", "cmp.l1": "A social media manager", "cmp.n1": "$3,000+", "cmp.s1": "Monthly salary, one channel, and the content still has to be made", "cmp.l2": "AutoVids", "cmp.n2": "$500", "cmp.s2": "A channel run end to end, production and publishing included", "cmp.l3": "The gap", "cmp.s3": "The same presence, at a sixth of the cost"}, "fr": {"s0.h1": "Une influence à grande échelle. <em>Dans toutes les langues.</em>", "s1.eyebrow": "Le studio", "s1.plate": "Ils travaillent avec nous", "s2.h1": "Enchantés.", "s2.k1": "Audience", "s2.d1": "Abonnés sur l’ensemble de nos réseaux, dont <b>30 000</b> sur Instagram.", "s2.k2": "Portée", "s2.d2": "Vues sur nos réseaux au cours de l’année écoulée, auprès de publics variés <b>en Israël et au-delà</b>.", "s2.k3": "Clients", "s2.d3": "Nous travaillons avec de <b>grandes organisations</b>, des marques médias de premier plan en Israël.", "s2.k4": "Technologie", "s2.n4": "Notre propre moteur", "s2.d4": "Nous avons bâti le pipeline <b>de bout en bout</b>, pas un assemblage d’outils du marché.", "s3.eyebrow": "Preuve", "s3.h1": "Quatre mois. Une vraie audience.<br><em>Zéro euro de publicité.</em>", "s4.eyebrow": "Le système", "s4.h1": "Une influence à grande échelle. <em>Dans toutes les langues.</em>", "s4.inH": "Votre flux <span class=\"ltr\">+ IA</span>", "s4.inS": "Vos contenus, ou un sujet que l’IA collecte et vérifie", "s4.eng": "Le moteur média", "s4.st1": "Script", "s4.st2": "Voix", "s4.st3": "Vidéo", "s4.st4": "Musique", "s4.st5": "Sous-titres", "s4.auto": "Entièrement automatique, de bout en bout, <span class=\"ltr\">24/7</span>", "s4.humH": "Humain dans la boucle", "s4.humS": "Contrôle ou édition, en option", "s4.t2": "Langues : hébreu, anglais, français, espagnol, arabe et plus", "s4.t3": "Production, à effectif constant", "s4.t4": "Toujours actif, quelques minutes par vidéo", "s3.n1": "1 127 466", "s2.n1": "50 000+", "aria.next": "Diapositive suivante", "aria.prev": "Diapositive précédente", "s3.kViews": "Interactions", "s3.kSocial": "Abonnés, organiques", "s3.lede": "Sipur LeYom. Des vidéos sur la culture juive, générées automatiquement de bout en bout, d’avril à août.", "s3.nSocial": "5 000+", "s3.c1": "D’avril à août, quatre mois", "s3.c2": "Aucun budget publicitaire", "s3.c3": "Contenu généré par IA, de bout en bout", "s3.m1": "Avril", "s3.m2": "Mai", "s3.m3": "Juin", "s3.m4": "Juillet", "s3.m5": "Août", "s4.note": "<b>Nous ouvrons les comptes pour vous</b>, dans la limite des adresses e-mail et des numéros de téléphone dont nous disposons. Si d’autres comptes sont nécessaires, <b>i24 les ouvre et nous les connectons à notre système</b>.", "s6.eyebrow": "Le pilote", "s6.h1": "Cinq marchés. Trente jours. <em>Entièrement géré.</em>", "s6.k1": "Le pilote", "s6.a1": "<b>5</b> marchés", "s6.a2": "<b>4</b> plateformes", "s6.a3": "Premiers marchés en ligne sous <b>30 jours</b>", "s6.k2": "Chaque marché, chaque semaine", "s6.b1": "<b>7</b> vidéos basées sur l’IA", "s6.b2": "<b>4</b> vidéos i24", "s6.b3": "<b>3 à 5</b> contenus courts", "s6.b4": "Breaking &nbsp;·&nbsp; Faits &nbsp;·&nbsp; Citations &nbsp;·&nbsp; Histoires locales &nbsp;·&nbsp; Images", "s6.k3": "Ce que nous opérons", "s6.per": "par mois", "s6.t1": "Technologie, contenu et exploitation", "s6.t2": "Budget média payant en sus", "s6.c7": "Ouverture des comptes dans la limite de nos adresses e-mail et numéros de téléphone. Les comptes supplémentaires sont ouverts par i24 puis connectés à notre système.", "s0.flow": "Entièrement automatisé &nbsp;→&nbsp; du contenu 24/7 &nbsp;→&nbsp; de la croissance", "s6.total2": "<b>60 à 70</b> contenus par mois, par marché", "s6.total3": "<b>300 à 350</b> contenus par mois sur les cinq marchés", "s6.a4": "<b>20</b> comptes au total, 5 marchés × 4 plateformes", "s6.o1": "Recherche, conception et développement", "s6.o2": "Production de contenu IA", "s6.o3": "Ouverture et gestion des comptes", "s6.o4": "Publication automatisée", "s6.o5": "Localisation pour chaque marché", "s6.o6": "Veille des tendances locales", "s6.o7": "Planification du calendrier", "s6.o8": "Adaptation à chaque plateforme", "s6.o9": "Tableau de bord et analyses", "s6.o10": "Contrôle de la publication", "s6.o11": "Tests A/B", "s6.o12": "Optimisation continue", "s6.net": "Un réseau de contenu géré de bout en bout", "s6.tl": "Pilote de 3 mois", "s6.m1": "Mois 1 : construction et lancement", "s6.m2": "Mois 2 : nouvelles fonctionnalités, réglage du système, mesure et optimisation", "s6.m3": "Mois 3 : extension et décision de passage à l’échelle", "turn.msg": "Tournez votre appareil", "turn.sub": "La présentation est conçue pour un écran large", "cmp.k": "Coût d’une chaîne, par mois", "cmp.l1": "Un responsable réseaux sociaux", "cmp.n1": "3 000 $+", "cmp.s1": "Salaire mensuel, une seule chaîne, et le contenu reste à produire", "cmp.l2": "AutoVids", "cmp.n2": "500 $", "cmp.s2": "Une chaîne gérée de bout en bout, production et publication comprises", "cmp.l3": "L’écart", "cmp.s3": "La même présence, pour un sixième du coût"}};
   var stage = document.getElementById('stage');
   var lang = 'he';
 
